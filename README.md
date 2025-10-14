@@ -1,1 +1,0 @@
-Manifest repo for ArgoCD
