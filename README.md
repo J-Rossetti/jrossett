@@ -1,1 +1,1 @@
-# jrossett
+Manifest repo for ArgoCD
