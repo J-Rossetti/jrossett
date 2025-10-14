@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: wilapp
+    namespace: default
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: wilapp
+    template:
+        metadata:
+            labels:
+                app: wilapp
+        spec:
+            containers:
+                - name: wilapp
+                  image: wil42/playground:v1
+                  imagePullPolicy: Always
+                  ports:
+                      - containerPort: 8888
+                        name: wilapp_port
+                        protocol: TCP
+                  readinessProbe:
+                      httpGet:
+                          port: web
+                          path: /
