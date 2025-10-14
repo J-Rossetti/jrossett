@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: wilapp-ingress
   namespace: dev
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
   - host:
