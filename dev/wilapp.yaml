@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: wilapp
-    namespace: default
+    namespace: dev
 spec:
     replicas: 1
     selector:
@@ -23,5 +23,5 @@ spec:
                         protocol: TCP
                   readinessProbe:
                       httpGet:
-                          port: web
+                          port: wilapp_port
                           path: /
