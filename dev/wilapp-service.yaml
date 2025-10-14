@@ -2,12 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
     name: wilapp-service
+    namespace: dev
 spec:
-    type: NodePort
+    type: ClusterIP
     selector:
         app: wilapp
-ports:
-    - name: http
-      port: 80
-      targetPort: web
-      nodePort: 30888
+    ports:
+        - name: http
+          port: 80
+          targetPort: wilport
