@@ -2,12 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
     name: wilapp-service
-    namespace: dev
 spec:
     type: NodePort
     selector:
         app: wilapp
     ports:
-        - name: wilapp_port
+        - name: http
           port: 80
-          targetPort: wilapp_port
+          targetPort: wilport

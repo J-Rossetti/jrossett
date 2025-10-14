@@ -19,9 +19,9 @@ spec:
                   imagePullPolicy: Always
                   ports:
                       - containerPort: 8888
-                        name: wilapp_port
+                        name: wilport
                         protocol: TCP
                   readinessProbe:
                       httpGet:
-                          port: wilapp_port
+                          port: wilport
                           path: /
